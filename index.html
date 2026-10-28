@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yâren — Her fincanda ortak bir hikâye</title>
+  <meta name="description" content="Yâren: geleneksel Türk kahvesini espresso ve modern demleme kültürüyle buluşturan kahve markası.">
+  <meta name="theme-color" content="#3b2416">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+  <!-- ===== SVG ŞABLONLARI (çekirdek + fincanlar) ===== -->
+  <template id="bean-template">
+    <svg viewBox="0 0 40 60" aria-hidden="true">
+      <ellipse cx="20" cy="30" rx="18" ry="28" fill="#4a2a17"/>
+      <ellipse cx="15" cy="24" rx="9" ry="17" fill="#7a4a2b" opacity=".55"/>
+      <path d="M20 3 C9 20, 31 40, 20 57" fill="none" stroke="#1f110a" stroke-width="3.2" stroke-linecap="round"/>
+    </svg>
+  </template>
+
+
+  <!-- ===== AÇILIŞ: DÖKÜLEN KAHVE ÇEKİRDEKLERİ ===== -->
+  <div class="intro" id="intro">
+    <div class="intro__brand">
+      <span class="intro__name">Yâren</span>
+      <span class="intro__tag">Her fincanda ortak bir hikâye.</span>
+    </div>
+    <div class="beans" id="beans"></div>
+    <button class="intro__skip" id="skip" type="button">Geç →</button>
+  </div>
+
+  <!-- ===== NAVİGASYON ===== -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#anasayfa" aria-label="Yâren ana sayfa">Yâren</a>
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Menüyü aç/kapat">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__menu" id="navMenu" aria-label="Ana menü">
+      <a href="#anasayfa" class="nav__link">Ana Sayfa</a>
+      <a href="#kahveler" class="nav__link">Kahveler</a>
+      <a href="#hikaye" class="nav__link">Hikâyemiz</a>
+      <a href="#iletisim" class="nav__link nav__link--cta">İletişim</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="anasayfa">
+      <div class="hero__beans" id="heroBeans" aria-hidden="true"></div>
+      <div class="hero__text">
+        <p class="eyebrow hero__in" style="--d:.1s">Türk kahvesi × Modern demleme</p>
+        <h1 class="hero__in" style="--d:.25s">Yâren</h1>
+        <p class="hero__slogan hero__in" style="--d:.4s">Her fincanda ortak bir hikâye.</p>
+        <a class="btn hero__in" style="--d:.55s" href="#kahveler">Kahveleri Keşfet</a>
+      </div>
+      <div class="hero__art hero__in" style="--d:.5s" aria-hidden="true">
+  <svg class="pour" viewBox="0 0 400 360">
+    <defs>
+      <linearGradient id="copper" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#8a4a22"/>
+        <stop offset=".35" stop-color="#e0a06a"/>
+        <stop offset=".7" stop-color="#b8683a"/>
+        <stop offset="1" stop-color="#7a3e1d"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Fincan + tabak -->
+    <ellipse cx="260" cy="346" rx="96" ry="10" fill="#000" opacity=".22"/>
+    <ellipse cx="260" cy="342" rx="88" ry="13" fill="#d9c9ad"/>
+    <ellipse cx="260" cy="338" rx="70" ry="9" fill="#efe4cf"/>
+    <path d="M306 284 q30 2 24 26 q-4 14 -26 14" fill="none" stroke="#3b2416" stroke-width="6" stroke-linecap="round"/>
+    <path d="M212 270 H308 L298 328 Q296 338 284 338 H236 Q224 338 222 328 Z" fill="#f6f0e4" stroke="#3b2416" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M216 281 H304" stroke="#6b7a3a" stroke-width="5"/>
+<g aria-hidden="true">
+  <text class="pour__letter" style="--k:0" x="260" y="297">Y</text>
+  <text class="pour__letter" style="--k:1" x="260" y="306">â</text>
+  <text class="pour__letter" style="--k:2" x="260" y="315">r</text>
+  <text class="pour__letter" style="--k:3" x="260" y="324">e</text>
+  <text class="pour__letter" style="--k:4" x="260" y="333">n</text>
+</g>
+    <ellipse cx="260" cy="270" rx="48" ry="10" fill="#e4d6b8" stroke="#3b2416" stroke-width="2"/>
+    <ellipse class="pour__coffee" cx="260" cy="271" rx="41" ry="7.5" fill="#2b170d"/>
+    <ellipse class="pour__foam" cx="260" cy="270" rx="33" ry="5" fill="#b98a55"/>
+
+    <!-- Cezve (ucu 191,119 noktasından eğilir) -->
+    <g class="pour__pot">
+      <path d="M106 152 L62 134" stroke="#7a3e1d" stroke-width="5" stroke-linecap="round"/>
+      <path d="M62 134 L20 117" stroke="#3b2416" stroke-width="11" stroke-linecap="round"/>
+      <path d="M118 124 L112 134 Q90 162 88 196 Q86 216 108 216 H172 Q194 216 192 196 Q190 162 168 134 L162 124 Z" fill="url(#copper)" stroke="#3b2416" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M100 176 Q140 188 182 176" fill="none" stroke="#3b2416" stroke-width="2" opacity=".35"/>
+      <ellipse cx="140" cy="124" rx="22" ry="5" fill="#2b170d" stroke="#3b2416" stroke-width="2"/>
+      <path d="M160 123 Q176 119 192 118 Q180 128 166 137 Z" fill="#c07a46" stroke="#3b2416" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Akan kahve -->
+    <path class="pour__stream" pathLength="100" d="M191 121 C214 123 256 134 258 205 L258 268"/>
+    <path class="pour__stream pour__stream--hl" pathLength="100" d="M191 121 C214 123 256 134 258 205 L258 268"/>
+
+    <!-- Çarpma dalgaları -->
+    <g class="pour__ripple">
+      <ellipse cx="258" cy="271" rx="6" ry="2"/>
+      <ellipse cx="258" cy="271" rx="6" ry="2" style="animation-delay:.6s"/>
+    </g>
+
+    <!-- Fincan dolunca buhar -->
+    <g class="pour__steam">
+      <path class="steam" style="--s:0s"  d="M244 256 q-9 -13 0 -26 t0 -26"/>
+      <path class="steam" style="--s:.6s" d="M260 256 q-9 -13 0 -26 t0 -26"/>
+      <path class="steam" style="--s:1.2s" d="M276 256 q-9 -13 0 -26 t0 -26"/>
+    </g>
+  </svg>
+</div>
+<div class="badge hero__in" style="--d:.9s" aria-hidden="true">
+  <svg viewBox="0 0 120 120">
+    <defs>
+      <path id="badgeCircle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/>
+    </defs>
+    <circle cx="60" cy="60" r="58" fill="#6b7a3a"/>
+    <text font-size="9.5" font-weight="600" letter-spacing="1.5" fill="#f6f0e4">
+      <textPath href="#badgeCircle" textLength="272" lengthAdjust="spacing">GÜNLÜK TAZE KAVRULUR ✦ ELLE DEMLENİR ✦ </textPath>
+    </text>
+  </svg>
+ <svg class="badge__icon" viewBox="0 0 24 24" fill="none" stroke="#f6f0e4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/>
+  <path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/>
+  <path d="M8 3c-1 1.2 1 2 0 3.5M12 3c-1 1.2 1 2 0 3.5"/>
+</svg>
+</div>
+      <a href="#kahveler" class="hero__scroll" aria-label="Aşağı kaydır"><span></span></a>
+    </section>
+
+    <!-- ===== KAYAN BANT ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Türk Kahvesi ✦ Espresso ✦ Filtre Kahve ✦ Türk Kahvesi ✦ Espresso ✦ Filtre Kahve ✦ </span>
+        <span>Türk Kahvesi ✦ Espresso ✦ Filtre Kahve ✦ Türk Kahvesi ✦ Espresso ✦ Filtre Kahve ✦ </span>
+      </div>
+    </div>
+
+    <!-- ===== ÜRÜNLER ===== -->
+    <section class="section" id="kahveler">
+      <header class="section__head reveal">
+        <p class="eyebrow eyebrow--dark">Menü</p>
+        <h2>Kahveleri Keşfet</h2>
+        <p>Üç farklı gelenek, tek bir sıcaklık. Favorini seç.</p>
+      </header>
+
+      <div class="cards">
+  <article class="card reveal" style="--i:0">
+    <div class="card__img">
+      <img src="img/turk-kahvesi.jpg" alt="Bakır cezveden fincana servis edilen Türk kahvesi" width="800" height="600" loading="lazy">
+    </div>
+    <div class="card__body">
+      <h3>Türk Kahvesi</h3>
+      <p>Bakır cezvede, kısık ateşte pişen kadim lezzet. Bol köpüklü, yoğun ve lokumla en güzel hâli.</p>
+      <div class="card__foot"><span class="price">₺85</span><span class="note">tek fincan</span></div>
+    </div>
+  </article>
+
+  <article class="card reveal" style="--i:1">
+    <div class="card__img">
+      <img src="img/espresso.jpg" alt="Kremalı bir fincan espresso" width="800" height="600" loading="lazy">
+    </div>
+    <div class="card__body">
+      <h3>Espresso</h3>
+      <p>Yüksek basınçta çekilen, altın rengi kremalı ve tam gövdeli bir yudum. Güne hızlı ve güçlü başla.</p>
+      <div class="card__foot"><span class="price">₺75</span><span class="note">çift shot ₺95</span></div>
+    </div>
+  </article>
+
+  <article class="card reveal" style="--i:2">
+    <div class="card__img">
+      <img src="img/filtre-kahve.jpg" alt="Sıcak bir kupa filtre kahve" width="800" height="600" loading="lazy">
+    </div>
+    <div class="card__body">
+      <h3>Filtre Kahve</h3>
+      <p>Yavaş demlenen, meyvemsi ve temiz içimli. Uzun sohbetlerin ve bitmeyen kupaların tercihi.</p>
+      <div class="card__foot"><span class="price">₺95</span><span class="note">350 ml</span></div>
+    </div>
+  </article>
+</div>
+    </section>
+
+    <!-- ===== HİKÂYE ===== -->
+    <section class="story" id="hikaye">
+      <div class="story__inner">
+        <div class="reveal">
+          <p class="eyebrow">Hikâyemiz</p>
+          <h2>Eski dost, yeni fincan.</h2>
+          <p>“Yâren”, dost ve sohbet arkadaşı demek. Kırk yıllık hatır kadar köklü bir geleneği, bugünün demleme kültürüyle aynı masaya oturtuyoruz.</p>
+          <p>Cezvenin kokusu ile espresso makinesinin sesi aynı kafede buluşsun; herkes kendi fincanında ortak bir hikâyenin parçası olsun istiyoruz.</p>
+        </div>
+        <ul class="values reveal" style="--i:1">
+          <li><strong>01</strong><span>Özenle seçilmiş çekirdekler</span></li>
+          <li><strong>02</strong><span>Geleneksel ve modern yöntemler</span></li>
+          <li><strong>03</strong><span>Her yudumda sıcak bir sohbet</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== İLETİŞİM ===== -->
+    <section class="section section--contact" id="iletisim">
+      <header class="section__head reveal">
+        <p class="eyebrow eyebrow--dark">İletişim</p>
+        <h2>Bize bir mesaj bırak</h2>
+        <p>Önerilerini, sorularını ya da sadece merhabanı yaz.</p>
+      </header>
+
+      <form class="form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Ad</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Adın">
+          <small class="error" id="nameError" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="email">E-posta</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="ornek@mail.com">
+          <small class="error" id="emailError" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="message">Mesaj</label>
+          <textarea id="message" name="message" rows="5" placeholder="Mesajın"></textarea>
+          <small class="error" id="messageError" aria-live="polite"></small>
+        </div>
+        <button class="btn btn--dark" type="submit">Gönder</button>
+        <p class="form__success" id="formSuccess" role="status" hidden>
+          ☕ Teşekkürler! Mesajın bize ulaştı, en kısa sürede dönüş yapacağız.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="footer__logo">Yâren</span>
+    <p>Her fincanda ortak bir hikâye.</p>
+    <small>© 2026 Yâren</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
